@@ -1,0 +1,46 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "name": "swagger",
+      "type": "com.example.demo.base.swagger.SwaggerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "defaultValue": "",
+      "name": "swagger.base-package",
+      "description": "swagger会解析的包路径",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "name": "swagger.base-path",
+      "description": "swagger会解析的url规则",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "defaultValue": "",
+      "name": "swagger.description",
+      "description": "描述",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "name": "swagger.enabled",
+      "description": "是否开启swagger",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.example.demo.base.swagger.SwaggerProperties",
+      "defaultValue": "",
+      "name": "swagger.title",
+      "description": "标题",
+      "type": "java.lang.String"
+    },
+
+  ]
+}

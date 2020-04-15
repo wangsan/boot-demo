@@ -1,0 +1,22 @@
+brpc:
+  global:
+    naming:
+      namingServiceUrl: consul://127.0.0.1:8500
+      namingServiceFactory: com.baidu.brpc.naming.consul.ConsulNamingFactory
+      group: "normal"
+      version: 2.0.0
+      ignoreFailOfNamingService: false
+    client:
+      workThreadNum: 1
+      ioThreadNum: 1
+    server:
+      port: 8002
+      workThreadNum: 1
+      ioThreadNum: 1
+  custom:
+    com.example.demo.brpc.api.EchoService:
+      naming:
+        version: 2.0.0
+    com.example.demo.brpc.api.AsyncEchoService:
+      naming:
+        version: 2.0.0
