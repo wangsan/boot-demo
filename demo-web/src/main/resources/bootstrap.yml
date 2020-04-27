@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: demo
+  cloud:
+    consul:
+      config:
+        enabled: true
+        defaultContext: ${spring.application.name}
+        format: yaml
+        fail-fast: true
+      discovery:
+        register: true
+
+
+---
+spring:
+  profiles: test
+  cloud:
+    consul:
+      config:
+        fail-fast: false

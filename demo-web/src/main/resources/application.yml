@@ -1,3 +1,26 @@
+logging:
+  level:
+    com.example.demo.DemoApplication: debug
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: trace
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    info:
+      enabled: true
+  info:
+    git:
+      mode: full
+
+swagger:
+  enabled: true
+  title: hello wangsan
+
 brpc:
   global:
     naming:
@@ -20,3 +43,39 @@ brpc:
     com.example.demo.brpc.api.AsyncEchoService:
       naming:
         version: 2.0.0
+
+
+sample:
+  prop: from yml
+
+server:
+  port: 8080
+
+
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 100
+      connection-timeout: 120000
+
+---
+spring:
+  profiles: test
+  datasource:
+    platform: h2
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
